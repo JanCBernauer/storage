@@ -1,0 +1,18 @@
+namespace storage;
+
+// this defines the record-level data
+
+
+table record{
+ id:uint32;
+ data: [ubyte];
+ }
+
+// This is the struct defining the event-level packet
+
+table event{
+  eventnr:uint64;
+  records:[record];
+}
+
+

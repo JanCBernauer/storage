@@ -1,0 +1,27 @@
+namespace storage;
+
+// this defines the event-offset map, at the end of the file
+
+
+struct eventidx{
+  eventnr:uint64;
+  offset:uint64;
+  size:uint32;
+}
+
+
+// this defines the id to long-name directory
+table nameid{
+  id:uint32;
+  name:string;
+}
+ 
+table index{
+  events:[eventidx];
+  names:[nameid];
+  }
+
+
+
+
+
