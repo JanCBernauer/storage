@@ -40,7 +40,7 @@ public:
   writer (std::string filename);
   ~writer ();
 
-  std::vector<uint8_t> * add(std::string ); // this adds a buffer with the give name, returning a pointer to the std::vector buffer.
+  std::vector<uint8_t> * add(std::string, uint32_t flags=0 ); // this adds a buffer with the give name, returning a pointer to the std::vector buffer.
   int writeEvent(uint64_t eventnr);
 };
 

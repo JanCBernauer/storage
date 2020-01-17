@@ -5,6 +5,7 @@ namespace storage;
 
 table record{
  id:uint32;
+ flags:uint32;
  data: [ubyte];
  }
 

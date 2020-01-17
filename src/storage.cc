@@ -11,7 +11,7 @@ writer::writer(std::string filename)
   file.open(filename,std::ios_base::out|std::ios_base::binary);
 }
 
-std::vector<uint8_t> * writer::add(std::string name)
+std::vector<uint8_t> * writer::add(std::string name,uint32_t flags)
 {
   std::unique_ptr<recordT> record(new recordT());
 
@@ -23,6 +23,7 @@ std::vector<uint8_t> * writer::add(std::string name)
       recordmap[name]=string_hash(name);
     }
   record->id=recordmap[name]; 
+  record->flags=flags;
 
   event.records.push_back(std::move(record));
   return &event.records[event.records.size()-1]->data;
